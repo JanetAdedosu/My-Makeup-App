@@ -1,42 +1,122 @@
+/* App.css */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100vh; /* vh stands for viewport height */
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('/diana-ruseva-1cHnHtuNAcc-unsplash.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:black; /* Set text color to white or any contrasting color */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+
+h1{
+  color:blue;
+  text-align:center;
+  margin:0%
+  font-style
+} 
+h2{
+  color:blue;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h3{
+  color:black;
+  font-weight:bolder;
+  text-decoration:wavy
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* classname{
+text-align:justify;
+text-decoration: dotted;
+margin:auto */
+
+.active{
+  text-decoration: underline;
+}
+.skin-color-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.skin-color-option {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* App.css */
+
+/* Resetting default margin and padding for the ul */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style:disc;
 }
 
-.card {
-  padding: 2em;
+/* Styling for the navigation bar */
+nav {
+  background-color:cyan; /* You can change the background color to your preference */
+  display:flex; /* Display the items in a flex container */
+  justify-content:space-between; /* Space the items evenly across the container */
+  align-items:center; /* Center the items vertically in the container */
+  padding: 10px; /* Add padding for better visual appearance */
 }
 
-.read-the-docs {
-  color: #888;
+/* Styling for the navigation items */
+nav ul {
+  display:flex; /* Display the items in a flex container */
+}
+
+nav ul li {
+  margin: 0 100px; /* Add margin to separate the items */
+}
+
+nav ul li a {
+  color: blue; /* Set the text color to white */
+  text-decoration:wavy; /* Remove underlines from the links */
+}
+
+/* Optional: Style the active link differently */
+nav ul li a.active {
+  font-weight: bold;
+  /* Add any additional styles for the active link */
+}
+
+.input-field {
+  margin-bottom: 50px; /* Adjust the margin as needed */
+}
+
+/* Add any additional styling for your form */
+
+/* Add this CSS to style your image and input fields */
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-width: 100px; /* Adjust the width of your image as needed */
+  margin-right: 10px; /* Add some space between the image and input fields */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
