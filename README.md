@@ -17,9 +17,6 @@ cd client and run npm install install dependencies related to React (the client)
 
 For the External API ,use this https://makeup-api.herokuapp.com/
 
-SUGGESTION
-Implement or link the external API to the home page where the key "Enter Product" is ,instead of it displaying 
-products submitted,it should display products from the external API.
 
 Run Your Development Servers
 
