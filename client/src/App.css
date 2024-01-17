@@ -76,7 +76,7 @@ nav {
   display:flex; /* Display the items in a flex container */
   justify-content:space-between; /* Space the items evenly across the container */
   align-items:center; /* Center the items vertically in the container */
-  padding: 10px; /* Add padding for better visual appearance */
+  padding: 5px; /* Add padding for better visual appearance */
 }
 
 /* Styling for the navigation items */
@@ -85,7 +85,7 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 100px; /* Add margin to separate the items */
+  margin: 80px; /* Add margin to separate the items */
 }
 
 nav ul li a {

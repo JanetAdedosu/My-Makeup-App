@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Login from './login';
+import Register from './register';
 import MakeupList from "./MakeupList";
 import LipstickList from "./LipstickList";
 import Wishlist from "./Wishlist";
 import "./App.css";
-
-
 
 const App = () => {
   const EMPTY_FORM = {
@@ -43,10 +43,9 @@ const App = () => {
     "#D2B48C", // Tan
     "#F4A460", // SandyBrown
   ];
-  const brands = ['Maybelline', 'L\'Oréal', 'MAC', 'CoverGirl', 'Revlon'];
 
+  const brands = ['Maybelline', 'L\'Oréal', 'MAC', 'CoverGirl', 'Revlon'];
   const skinProducts = ['Blush','Powder','Lipstick','Foundation'];
-   
   const budget = ['<10$','>10$','10$']
 
   const handleSkinColorChange = (color) => {
@@ -91,7 +90,7 @@ const App = () => {
   return (
     <div className="App">
       
-         <nav className="navbar">
+        <nav className="navbar">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -105,6 +104,12 @@ const App = () => {
             <li>
               <Link to="/wishlist">Wishlist ({wishlist.length})</Link>
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register as User</Link>
+            </li>
           </ul>
         </nav> 
 
@@ -114,22 +119,22 @@ const App = () => {
             element={
               <div>
               <h1>welcome to my Makeup App !</h1>
-             <h2>Discover the latest makeup products and create your personalized wishlist.</h2>
-             <div>
-             <h3>Ready to Explore?</h3>
+            <h2>Discover the latest makeup products and create your personalized wishlist.</h2>
+            <div>
+            <h3>Ready to Explore?</h3>
              {/* <button onClick={() => history.push('/makeup')}>Explore Products</button> */}
-             </div>
-             
-             {/* <div>
-             <h2>Quick Links</h2>
-             <ul>
-             <li><Link to="/makeup">Explore Makeup</Link></li>
-             <li><Link to="/lipstick">Explore Lipstick</Link></li>
-             <li><Link to="/wishlist">My Wishlist</Link></li>
+            </div>
+            
+            {/* <div>
+            <h2>Quick Links</h2>
+            <ul>
+            <li><Link to="/makeup">Explore Makeup</Link></li>
+            <li><Link to="/lipstick">Explore Lipstick</Link></li>
+            <li><Link to="/wishlist">My Wishlist</Link></li>
              {/* Add more links as needed */}
-             {/* </ul>
+            {/* </ul>
              </div> */} 
-             {/* <div className="image-container">
+            {/* <div className="image-container">
               <img
                   src="/ef46c94c-1e44-4d3b-8e70-61795e2a166c.png"
                   alt="My Image"
@@ -146,17 +151,17 @@ const App = () => {
                 <form onSubmit={(e) => handleSubmit(e)}>
                   <br />
                   <label>
-                 Select your Skin Color: 
-                 <div className="skin-color-options">
-                 {skinColorOptions.map((color, index) => (
-                 <div
+                Select your Skin Color: 
+                <div className="skin-color-options">
+                {skinColorOptions.map((color, index) => (
+                <div
                 key={index}
                 className="skin-color-option"
                 style={{ backgroundColor: color }}
                 onClick={() => handleSkinColorChange(color)}
               ></div>
               ))}
-             </div>
+            </div>
               </label>
                   <label>
                     {/* Select Skin Color: */}
@@ -170,53 +175,53 @@ const App = () => {
                   </label>
                   
                 <label className="input-field">
-                 Select your Skin Color
+                Select your Skin Color
                 <select onChange={(e) => handleSkinColorChange(e.target.value)}>
                 <option value="">Select Skin Color</option>
                 {skinColorOptions.map((color, index) => (
                 <option key={index} value={color}>
                 {color}
-                 </option>
+                </option>
                 ))}
                 </select>
-                 </label>
+                </label>
                   <label className="input-field">
-                   Select Brand
+                  Select Brand
                   <select onChange={(e) => handleBrandChange(e.target.value)}>
                   <option value="">Select Brand</option>
                   {brands.map((brand, index) => (
                   <option key={index} value={brand}>
                   {brand}
                   </option>
-                 ))}
-                 </select>
-                 </label>
+                ))}
+                </select>
+                </label>
                   
-                 <label className="input-field">
-                 What product would you like?
+                <label className="input-field">
+                What product would you like?
                 <select onChange={(e) => handleSkinProductsChange(e.target.value)}>
                 <option value="">Select Skin Product</option>
                 {skinProducts.map((color, index) => (
                 <option key={index} value={color}>
                 {color}
-                 </option>
+                </option>
                 ))}
                 </select>
                 </label>
                 
                 <label className="input-field">
-                 Select your Budget
+                Select your Budget
                 <select onChange={(e) => handleBudgetChange(e.target.value)}>
                 <option value="">Select Budget</option>
                 {budget.map((budget, index) => (
                 <option key={index} value={budget}>
                 {budget}
-                 </option>
+                </option>
                 ))}
                 </select>
-                 </label>
+                </label>
 
-                 <div>
+                <div>
                 <label>
                 Upload Image:
                 <input type="file" accept="image/*" onChange={handleImageChange} />
@@ -299,6 +304,8 @@ const App = () => {
               </div>         
                 }
           />
+            <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         </Routes>
     
     </div>
